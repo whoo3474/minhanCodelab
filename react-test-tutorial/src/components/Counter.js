@@ -5,10 +5,10 @@ class Counter extends Component {
     value:1
   }
   onIncrease = () =>{
-    this.setState(({value} => ({value:value + 1})));
+    this.setState(({value}) => ({value:value + 1}));
   }
   onDecrease = () =>{
-    this.setState(({value} => ({value:value - 1})));
+    this.setState(({value}) => ({value:value - 1}));
   }
   render() {
     const { value } = this.state;
