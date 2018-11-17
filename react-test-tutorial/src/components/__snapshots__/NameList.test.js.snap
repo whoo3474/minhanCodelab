@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NameList matches snapshot 1`] = `
+<ul>
+  <li>
+    민한
+  </li>
+  <li>
+    우정민
+  </li>
+</ul>
+`;
