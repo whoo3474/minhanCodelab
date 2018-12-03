@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import withSplitting from './withSplitting'
+const SplitMe_2 = withSplitting(() => import('./SplitMe_2'));;
 
 class App extends Component {
   state = {
     SplitMe: null,
-    toggle : false
+    toggle : false,
+    visible: false
   };
   alertHandleClick = () => {
     import('./notify').then(({default:notify}) =>{
@@ -18,13 +21,20 @@ class App extends Component {
       });
     });
   };
+  handleClick = () => {
+    this.setState({
+      visible: true
+    });
+  };
   render() {
-    const { SplitMe,toggle } = this.state;
+    const { SplitMe,toggle,visible  } = this.state;
     return (
       <div>
       <button onClick={this.alertHandleClick}>Click Me-alert</button>
-        <button onClick={this.componentHandleClick}>Click Me-component</button>
-        {toggle ? SplitMe && <SplitMe /> : ''}
+      <button onClick={this.componentHandleClick}>Click Me-component</button>
+      <button onClick={this.handleClick}>Click Me-HOC code-splitting</button>
+      {visible && <SplitMe_2 />}
+      {toggle ? SplitMe && <SplitMe /> : ''}
       </div>
     );
   }
