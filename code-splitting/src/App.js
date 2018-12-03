@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import withSplitting from './withSplitting'
-const SplitMe_2 = withSplitting(() => import('./SplitMe_2'));;
+const SplitMe_2 = withSplitting(() => import('./SplitMe_2'));
 
 class App extends Component {
   state = {
